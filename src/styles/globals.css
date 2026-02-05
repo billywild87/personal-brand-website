@@ -87,8 +87,8 @@
     inset: 0;
     z-index: -2;
     pointer-events: none;
-    background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1px, transparent 0);
-    background-size: 32px 32px;
+    background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
@@ -99,11 +99,22 @@
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background:
-      radial-gradient(ellipse 80% 50% at 20% 0%, rgb(34 211 238 / 0.08) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 100%, rgb(139 92 246 / 0.06) 0%, transparent 50%);
+    background: transparent;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+  }
+
+  @media (min-width: 768px) {
+    body::before {
+      background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1px, transparent 0);
+      background-size: 32px 32px;
+    }
+
+    body::after {
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgb(34 211 238 / 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgb(139 92 246 / 0.06) 0%, transparent 50%);
+    }
   }
 
   :focus-visible {

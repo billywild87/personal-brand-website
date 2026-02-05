@@ -4,20 +4,27 @@ import { BlurLayer } from "@/lib/effect";
 import Link from "next/link";
 import { BLUR_LAYERS, HEADER_HEIGHT } from "./constants";
 import { BottomBorder, FloatingParticles, TopGlow } from "./effects";
+import MobileMenu from "./MobileMenu";
 import NavLink from "./NavLink";
 
 export default function Header() {
   return (
     <header
-      className="group fixed inset-x-0 top-0 z-50 transition-all duration-500"
-      style={{ height: HEADER_HEIGHT }}
+      className="group fixed inset-x-0 top-0 z-50"
+      style={{ height: HEADER_HEIGHT, paddingRight: "var(--scrollbar-width, 0px)" }}
     >
-      <TopGlow />
-      <FloatingParticles />
+      <div className="hidden md:block">
+        <TopGlow />
+        <FloatingParticles />
+      </div>
 
-      {BLUR_LAYERS.map((layer, index) => (
-        <BlurLayer type="header" key={index} {...layer} />
-      ))}
+      <div className="hidden md:block">
+        {BLUR_LAYERS.map((layer, index) => (
+          <BlurLayer type="header" key={index} {...layer} />
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-zinc-900/80 backdrop-blur-sm md:hidden" />
 
       <BottomBorder />
 
@@ -25,13 +32,16 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           <Logo />
         </Link>
-        <nav className="flex items-center gap-8">
+
+        <nav className="hidden items-center gap-8 md:flex">
           {navigation.map((item) => (
             <NavLink key={item.href} href={item.href}>
               {item.label}
             </NavLink>
           ))}
         </nav>
+
+        <MobileMenu />
       </div>
     </header>
   );

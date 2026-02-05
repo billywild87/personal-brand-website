@@ -10,15 +10,21 @@ export default function Footer() {
 
   return (
     <footer
-      className="group fixed inset-x-0 bottom-0 z-50 transition-all duration-500"
-      style={{ height: FOOTER_HEIGHT }}
+      className="group fixed inset-x-0 bottom-0 z-50"
+      style={{ height: FOOTER_HEIGHT, paddingRight: "var(--scrollbar-width, 0px)" }}
     >
-      <BottomGlow />
-      <FloatingParticles />
+      <div className="hidden md:block">
+        <BottomGlow />
+        <FloatingParticles />
+      </div>
 
-      {BLUR_LAYERS.map((layer, index) => (
-        <BlurLayer type="footer" key={index} {...layer} />
-      ))}
+      <div className="hidden md:block">
+        {BLUR_LAYERS.map((layer, index) => (
+          <BlurLayer type="footer" key={index} {...layer} />
+        ))}
+      </div>
+
+      <div className="absolute inset-0 bg-zinc-900/80 backdrop-blur-sm md:hidden" />
 
       <TopBorder />
 
@@ -33,7 +39,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="font-mono text-xs text-zinc-500">
+        <p className="hidden font-mono text-xs text-zinc-500 sm:block">
           <span className="text-zinc-600">{"// "}</span>
           {currentYear} All rights reserved
         </p>
