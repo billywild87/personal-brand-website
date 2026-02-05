@@ -10,6 +10,7 @@ import { Heading, Text } from "@/components/ui/Typography";
 import {
   getAllExperienceIds,
   getExperienceDetail,
+  routes,
 } from "@/content";
 import { notFound } from "next/navigation";
 
@@ -51,7 +52,7 @@ export default async function ExperienceDetailPage({
     <main className="py-8 sm:py-12 lg:py-16">
       <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
         <Link
-          href="/experience"
+          href={routes.experiences}
           variant="muted"
           size="sm"
           className="mb-12 inline-flex items-center gap-2 transition-colors hover:text-primary"

@@ -1,6 +1,7 @@
 import { ArrowLeftIcon } from "@/components/icons";
 import { Page } from "@/components/Page";
 import { Link } from "@/components/ui";
+import { routes } from "@/content";
 
 export default function NotFound() {
   return (
@@ -13,7 +14,7 @@ export default function NotFound() {
         <div className="mb-10 h-px bg-linear-to-r from-primary-500/20 via-secondary/20 to-transparent" />
 
         <Link
-          href="/"
+          href={routes.home}
           variant="muted"
           className="group inline-flex items-center gap-2 transition-colors hover:text-primary"
         >

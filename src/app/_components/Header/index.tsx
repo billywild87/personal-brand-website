@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo";
-import { navigation } from "@/content";
+import { navigation, routes } from "@/content";
 import { BlurLayer } from "@/lib/effect";
 import Link from "next/link";
 import { BLUR_LAYERS, HEADER_HEIGHT } from "./constants";
@@ -29,7 +29,7 @@ export default function Header() {
       <BottomBorder />
 
       <div className="relative mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-8 lg:px-12">
-        <Link href="/" className="flex items-center">
+        <Link href={routes.home} className="flex items-center">
           <Logo />
         </Link>
 

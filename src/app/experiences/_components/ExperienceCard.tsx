@@ -1,6 +1,7 @@
 import { Icon } from "@/components/icons";
 import { Badge, Card } from "@/components/ui";
 import { Heading, Text } from "@/components/ui/Typography";
+import { routes } from "@/content";
 import type { Experience } from "@/content/types";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
     >
       {experience.hasDetail && (
         <Link
-          href={`/experiences/${experience.id}`}
+          href={routes.experience(experience.id)}
           className="absolute inset-0 z-10"
           aria-label={`Voir les détails de ${experience.company}`}
         />

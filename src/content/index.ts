@@ -1,4 +1,5 @@
 export * from "./types";
+export { routes } from "./routes";
 export { branding, siteMetadata, socialLinks } from "./site";
 export { navigation } from "./navigation";
 export { experienceHighlight, homeHero, skills } from "./home";
