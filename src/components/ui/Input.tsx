@@ -16,7 +16,7 @@ const inputVariants = cva(
     "w-full bg-zinc-800/30 text-zinc-100 placeholder:text-zinc-500",
     "border border-zinc-700/60 rounded-lg",
     "transition-all duration-300",
-    "focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20",
+    "focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20",
     "disabled:opacity-50 disabled:cursor-not-allowed",
   ],
   {
@@ -94,7 +94,7 @@ const textareaVariants = cva(
     "w-full bg-zinc-800/30 text-zinc-100 placeholder:text-zinc-500",
     "border border-zinc-700/60 rounded-lg",
     "transition-all duration-300",
-    "focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20",
+    "focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20",
     "disabled:opacity-50 disabled:cursor-not-allowed",
     "resize-none",
   ],
@@ -198,7 +198,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
           id={id}
           className={cn(
             "h-4 w-4 rounded border-zinc-700 bg-zinc-800/30",
-            "text-cyan-500 focus:ring-2 focus:ring-cyan-500/20 focus:ring-offset-0",
+            "text-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:ring-offset-0",
             "transition-colors cursor-pointer",
             className
           )}
@@ -254,7 +254,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             "w-full bg-zinc-800/30 text-zinc-100",
             "border border-zinc-700/60 rounded-lg",
             "transition-all duration-300",
-            "focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20",
+            "focus:outline-none focus:border-primary-500/50 focus:ring-2 focus:ring-primary-500/20",
             "disabled:opacity-50 disabled:cursor-not-allowed",
             "cursor-pointer appearance-none",
             "bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23a1a1aa%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')]",

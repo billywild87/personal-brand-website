@@ -7,7 +7,7 @@ const sectionTitleVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-cyan-400",
+        default: "text-primary",
         muted: "text-zinc-400",
       },
       size: {

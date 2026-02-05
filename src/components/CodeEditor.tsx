@@ -107,8 +107,8 @@ function tokenize(line: string): Token[] {
 
 const TOKEN_CLASS: Record<TokenType, string> = {
   comment: "text-zinc-500 italic",
-  keyword: "text-violet-400",
-  type: "text-cyan-400",
+  keyword: "text-secondary-400",
+  type: "text-primary",
   string: "text-emerald-400",
   number: "text-amber-400",
   property: "text-blue-300",
@@ -136,8 +136,8 @@ export default function CodeEditor() {
 
   return (
     <div className="group relative h-full">
-      <div className="absolute -inset-0.5 rounded-xl bg-linear-to-br from-cyan-500/20 via-violet-500/20 to-cyan-500/20 opacity-50 blur-sm transition-opacity duration-500 group-hover:opacity-75" />
-      <div className="absolute -inset-1 rounded-xl bg-linear-to-br from-cyan-500/10 to-violet-500/10 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-50" />
+      <div className="absolute -inset-0.5 rounded-xl bg-linear-to-br from-primary-500/20 via-secondary/20 to-primary-500/20 opacity-50 blur-sm transition-opacity duration-500 group-hover:opacity-75" />
+      <div className="absolute -inset-1 rounded-xl bg-linear-to-br from-primary-500/10 to-secondary/10 opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-50" />
 
       <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-zinc-700/50 bg-zinc-900/95 shadow-2xl backdrop-blur-sm">
         <div className="flex items-center justify-between border-b border-zinc-700/50 bg-gradient-to-r from-zinc-800/80 to-zinc-800/50 px-4 py-3">
@@ -150,7 +150,7 @@ export default function CodeEditor() {
             <div className="h-4 w-px bg-zinc-700" />
             <div className="flex items-center gap-2">
               <svg
-                className="h-4 w-4 text-cyan-400"
+                className="h-4 w-4 text-primary"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -162,7 +162,7 @@ export default function CodeEditor() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <span className="rounded-full bg-cyan-500/10 px-2 py-0.5 font-mono text-[10px] text-cyan-400">
+            <span className="rounded-full bg-primary-500/10 px-2 py-0.5 font-mono text-[10px] text-primary">
               TypeScript
             </span>
           </div>
@@ -191,7 +191,7 @@ export default function CodeEditor() {
         <div className="flex items-center justify-between border-t border-zinc-700/50 bg-zinc-800/30 px-4 py-2">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 text-[10px] text-zinc-500">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+              <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
               UTF-8
             </span>
             <span className="text-[10px] text-zinc-500">LF</span>

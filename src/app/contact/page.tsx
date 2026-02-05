@@ -58,17 +58,17 @@ export default function ContactPage() {
                   className="bordered-item group flex items-center justify-between py-3"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="text-zinc-500 transition-colors group-hover:text-cyan-400">
+                    <div className="text-zinc-500 transition-colors group-hover:text-primary">
                       <Icon name={contact.icon} size={20} />
                     </div>
                     <div>
-                      <p className="font-medium text-white transition-colors group-hover:text-cyan-400">
+                      <p className="font-medium text-white transition-colors group-hover:text-primary">
                         {contact.value}
                       </p>
                       <p className="text-sm text-zinc-500">{contact.label}</p>
                     </div>
                   </div>
-                  <div className="text-zinc-600 transition-colors group-hover:text-cyan-400">
+                  <div className="text-zinc-600 transition-colors group-hover:text-primary">
                     <Icon name="arrowRight" size={18} />
                   </div>
                 </Link>

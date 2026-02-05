@@ -10,12 +10,12 @@ export default function NotFound() {
           La page que vous recherchez n&apos;existe pas ou a été déplacée.
         </p>
 
-        <div className="mb-10 h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-transparent" />
+        <div className="mb-10 h-px bg-linear-to-r from-primary-500/20 via-secondary/20 to-transparent" />
 
         <Link
           href="/"
           variant="muted"
-          className="group inline-flex items-center gap-2 transition-colors hover:text-cyan-400"
+          className="group inline-flex items-center gap-2 transition-colors hover:text-primary"
         >
           <ArrowLeftIcon
             size={16}

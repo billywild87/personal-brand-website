@@ -13,9 +13,9 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
     <Card
       variant="gradient"
       padding="md"
-      className={`relative transition-all group-hover/timeline:border-cyan-500/30 lg:p-6 ${
+      className={`relative transition-all group-hover/timeline:border-primary-500/30 lg:p-6 ${
         experience.hasDetail
-          ? "cursor-pointer hover:border-cyan-500/30 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)]"
+          ? "cursor-pointer hover:border-primary-500/30 hover:shadow-glow-sm"
           : ""
       }`}
     >
@@ -90,7 +90,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
         </div>
 
         {experience.hasDetail && (
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-500 transition-all group-hover/timeline:border-cyan-500/50 group-hover/timeline:text-cyan-400">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-500 transition-all group-hover/timeline:border-primary-500/50 group-hover/timeline:text-primary">
             <Icon name="arrowRight" size={14} />
           </div>
         )}

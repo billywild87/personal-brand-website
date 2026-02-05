@@ -37,7 +37,7 @@ export default function NavLink({
       {...props}
     >
       {children}
-      <span className="absolute -bottom-1 left-0 h-px w-0 bg-linear-to-r from-cyan-400 to-blue-400 transition-all duration-300 group-hover/link:w-full group-hover/link:shadow-[0_0_8px_rgba(34,211,238,0.6)]" />
+      <span className="absolute -bottom-1 left-0 h-px w-0 bg-linear-to-r from-primary to-blue-400 transition-all duration-300 group-hover/link:w-full group-hover/link:shadow-glow-sm" />
     </Link>
   );
 }

@@ -9,21 +9,21 @@ import { ArrowUpRightIcon, ExternalLinkIcon } from "@/components/icons";
 const linkVariants = cva("inline-flex items-center gap-1 transition-all duration-300", {
   variants: {
     variant: {
-      default: "text-cyan-400 hover:text-cyan-300",
+      default: "text-primary hover:text-primary-400",
       muted: "text-zinc-400 hover:text-zinc-200",
       subtle: "text-zinc-400 hover:text-zinc-200",
-      white: "text-white hover:text-cyan-400",
+      white: "text-white hover:text-primary",
       nav: [
         "text-zinc-400 hover:text-zinc-100",
         "relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0",
-        "after:bg-cyan-400 after:transition-all after:duration-300",
+        "after:bg-primary after:transition-all after:duration-300",
         "hover:after:w-full",
       ],
       button: [
         "px-4 py-2 rounded-lg",
         "bg-zinc-800/50 border border-zinc-700/60",
-        "text-zinc-300 hover:text-cyan-400",
-        "hover:border-cyan-500/30 hover:bg-zinc-800",
+        "text-zinc-300 hover:text-primary",
+        "hover:border-primary-500/30 hover:bg-zinc-800",
       ],
     },
     size: {
@@ -151,7 +151,7 @@ export const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
         ref={ref}
         variant="nav"
         className={cn(
-          isActive && "text-cyan-400 after:w-full",
+          isActive && "text-primary after:w-full",
           className
         )}
         {...props}
@@ -225,7 +225,7 @@ export const SocialLink = forwardRef<HTMLAnchorElement, SocialLinkProps>(
         rel="noopener noreferrer"
         aria-label={label}
         className={cn(
-          "flex items-center gap-2 text-zinc-400 transition-colors hover:text-cyan-400",
+          "flex items-center gap-2 text-zinc-400 transition-colors hover:text-primary",
           className
         )}
         {...props}

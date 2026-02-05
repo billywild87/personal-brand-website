@@ -69,7 +69,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <SectionTitle className="mb-6 text-violet-400">{outsideCode.title}</SectionTitle>
+          <SectionTitle className="mb-6 text-secondary-400">{outsideCode.title}</SectionTitle>
           <div className="flex flex-wrap gap-3">
             {outsideCode.interests.map((interest) => (
               <Badge key={interest} variant="accent" size="lg">

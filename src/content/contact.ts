@@ -32,11 +32,10 @@ export const contactPage: ContactPage = {
   title: "Contact",
   subtitle: "Disponible pour de nouvelles opportunités à Paris",
   intro:
-    "Intéressé par une collaboration ? Je suis actuellement disponible pour des missions freelance ou des postes en CDI sur Paris.",
+    "Intéressé par une collaboration ? Je suis actuellement disponible pour des postes en CDI sur Paris.",
   availability: {
     status: "Disponible",
-    description:
-      "Ouvert aux opportunités CDI et missions freelance. Réponse sous 24-48h.",
+    description: "Ouvert aux opportunités CDI. Réponse sous 24-48h.",
   },
   location: {
     title: "Paris, France",

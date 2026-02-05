@@ -16,9 +16,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
-          "bg-cyan-500 text-zinc-900",
-          "hover:bg-cyan-400 hover:shadow-glow",
-          "focus-visible:ring-cyan-500",
+          "bg-primary-500 text-zinc-900",
+          "hover:bg-primary hover:shadow-glow",
+          "focus-visible:ring-primary-500",
         ],
         secondary: [
           "bg-zinc-800 text-zinc-100 border border-zinc-700",
@@ -32,13 +32,13 @@ const buttonVariants = cva(
         ],
         outline: [
           "border border-zinc-700 text-zinc-300 bg-transparent",
-          "hover:border-cyan-500/50 hover:text-cyan-400 hover:bg-cyan-500/5",
-          "focus-visible:ring-cyan-500",
+          "hover:border-primary-500/50 hover:text-primary hover:bg-primary-500/5",
+          "focus-visible:ring-primary-500",
         ],
         link: [
-          "text-cyan-400 underline-offset-4",
-          "hover:underline hover:text-cyan-300",
-          "focus-visible:ring-cyan-500",
+          "text-primary underline-offset-4",
+          "hover:underline hover:text-primary-400",
+          "focus-visible:ring-primary-500",
         ],
         danger: [
           "bg-red-500/10 text-red-400 border border-red-500/30",

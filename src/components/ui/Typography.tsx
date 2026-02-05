@@ -15,7 +15,7 @@ const headingVariants = cva("font-bold text-white tracking-tight", {
     variant: {
       default: "",
       gradient:
-        "bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent",
+        "bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent",
       mono: "font-mono",
     },
   },
@@ -64,8 +64,8 @@ const textVariants = cva("", {
       muted: "text-zinc-400",
       subtle: "text-zinc-400",
       white: "text-white",
-      primary: "text-cyan-400",
-      accent: "text-violet-400",
+      primary: "text-primary",
+      accent: "text-secondary-400",
     },
     weight: {
       normal: "font-normal",
@@ -120,7 +120,7 @@ const codeVariants = cva("font-mono", {
     variant: {
       inline: [
         "px-1.5 py-0.5 rounded-md text-sm",
-        "bg-zinc-800/50 text-cyan-400 border border-zinc-700/50",
+        "bg-zinc-800/50 text-primary border border-zinc-700/50",
       ],
       block: [
         "block p-4 rounded-lg text-sm",
@@ -166,9 +166,9 @@ const labelVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-cyan-400",
+        default: "text-primary",
         muted: "text-zinc-400",
-        accent: "text-violet-400",
+        accent: "text-secondary-400",
       },
     },
     defaultVariants: {
@@ -216,12 +216,12 @@ export const Prose = forwardRef<HTMLDivElement, ProseProps>(
           "prose prose-invert max-w-none",
           "prose-headings:text-white prose-headings:font-bold",
           "prose-p:text-zinc-300 prose-p:leading-relaxed",
-          "prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline",
+          "prose-a:text-primary prose-a:no-underline hover:prose-a:underline",
           "prose-strong:text-white prose-strong:font-semibold",
-          "prose-code:text-cyan-400 prose-code:bg-zinc-800/50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded",
+          "prose-code:text-primary prose-code:bg-zinc-800/50 prose-code:px-1 prose-code:py-0.5 prose-code:rounded",
           "prose-pre:bg-zinc-800/30 prose-pre:border prose-pre:border-zinc-700/50",
           "prose-ul:text-zinc-300 prose-ol:text-zinc-300",
-          "prose-li:marker:text-cyan-400",
+          "prose-li:marker:text-primary",
           sizeClasses[size],
           className
         )}

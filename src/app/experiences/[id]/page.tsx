@@ -54,7 +54,7 @@ export default async function ExperienceDetailPage({
           href="/experience"
           variant="muted"
           size="sm"
-          className="mb-12 inline-flex items-center gap-2 transition-colors hover:text-cyan-400"
+          className="mb-12 inline-flex items-center gap-2 transition-colors hover:text-primary"
         >
           <ArrowLeftIcon size={16} />
           Retour aux expériences
@@ -164,7 +164,7 @@ export default async function ExperienceDetailPage({
                   <div key={i} className="flex gap-3">
                     <CheckIcon
                       size={16}
-                      className="mt-0.5 shrink-0 text-cyan-500"
+                      className="mt-0.5 shrink-0 text-primary-500"
                     />
                     <Text size="sm" color="muted">
                       {item}
@@ -176,7 +176,7 @@ export default async function ExperienceDetailPage({
           )}
 
           <section>
-            <SectionTitle className="mb-6 text-violet-400">Enjeux techniques</SectionTitle>
+            <SectionTitle className="mb-6 text-secondary-400">Enjeux techniques</SectionTitle>
             <div className="card-accent-violet p-6">
               <div className="space-y-4">
                 {experience.challenges.map((item, i) => (
@@ -234,14 +234,14 @@ export default async function ExperienceDetailPage({
           <div className="divider-center" />
 
           <section>
-            <SectionTitle className="mb-6 text-violet-400">
+            <SectionTitle className="mb-6 text-secondary-400">
               Ce que cette expérience m&apos;a apporté
             </SectionTitle>
             <div className="space-y-3">
               {experience.learnings.map((learning, i) => (
                 <div key={i} className="learning-item">
                   <div className="check-icon-box">
-                    <CheckIcon size={12} className="text-violet-400" />
+                    <CheckIcon size={12} className="text-secondary-400" />
                   </div>
                   <Text color="muted" leading="relaxed">
                     {learning}

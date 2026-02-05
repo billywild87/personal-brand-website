@@ -112,7 +112,7 @@ export default function MobileMenu() {
                     {item.label}
                   </span>
                   <svg
-                    className="h-5 w-5 text-zinc-600 transition-colors group-hover:text-cyan-400"
+                    className="h-5 w-5 text-zinc-600 transition-colors group-hover:text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

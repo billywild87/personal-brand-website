@@ -63,7 +63,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="text-zinc-500 transition-all duration-300 hover:text-cyan-400 hover:drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+      className="text-zinc-500 transition-all duration-300 hover:text-primary hover:shadow-glow-sm"
     >
       {children}
     </Link>

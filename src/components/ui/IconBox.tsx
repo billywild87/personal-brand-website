@@ -12,7 +12,7 @@ const iconBoxVariants = cva(
         lg: "h-12 w-12",
       },
       interactive: {
-        true: "group-hover:border-cyan-500/50 group-hover:text-cyan-400 group-hover:shadow-[0_0_12px_rgba(34,211,238,0.3)]",
+        true: "group-hover:border-primary-500/50 group-hover:text-primary group-hover:shadow-glow-sm",
         false: "",
       },
     },

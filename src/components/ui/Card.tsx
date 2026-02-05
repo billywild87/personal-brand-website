@@ -8,12 +8,12 @@ const cardVariants = cva("rounded-lg border", {
       default: "border-zinc-700/60 bg-zinc-800/30",
       gradient:
         "border-zinc-700 bg-linear-to-br from-zinc-800/40 to-zinc-900/40 shadow-lg",
-      accent: "border-cyan-500/30 bg-cyan-500/5",
-      accentViolet: "border-violet-500/30 bg-violet-500/5",
+      accent: "border-primary-500/30 bg-primary-500/5",
+      accentViolet: "border-secondary/30 bg-secondary/5",
       interactive:
-        "border-zinc-700/60 bg-zinc-800/30 transition-all hover:border-cyan-500/30 hover:bg-zinc-800/50",
+        "border-zinc-700/60 bg-zinc-800/30 transition-all hover:border-primary-500/30 hover:bg-zinc-800/50",
       interactiveViolet:
-        "border-zinc-700/60 bg-zinc-800/30 transition-all hover:border-violet-500/30 hover:bg-zinc-800/50",
+        "border-zinc-700/60 bg-zinc-800/30 transition-all hover:border-secondary/30 hover:bg-zinc-800/50",
     },
     padding: {
       none: "p-0",
