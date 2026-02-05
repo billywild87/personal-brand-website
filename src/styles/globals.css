@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: 34 211 238;
-  --color-primary-hover: 6 182 212;
-  --color-accent: 139 92 246;
-  --color-accent-alt: 96 165 250;
+  /* Primary - Cyan */
+  --color-primary-400: 34 211 238;
+  --color-primary-500: 6 182 212;
+  --color-primary-600: 8 145 178;
+  --color-primary: var(--color-primary-400);
+
+  /* Secondary - Violet */
+  --color-secondary-400: 167 139 250;
+  --color-secondary-500: 139 92 246;
+  --color-secondary-600: 124 58 237;
+  --color-secondary: var(--color-secondary-500);
 
   --color-neutral-50: 250 250 250;
   --color-neutral-100: 244 244 245;
@@ -29,12 +36,12 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --glow-primary: 0 0 12px rgb(34 211 238 / 0.5);
-  --glow-primary-sm: 0 0 8px rgb(34 211 238 / 0.3);
-  --glow-primary-lg: 0 0 20px rgb(34 211 238 / 0.4), 0 0 40px rgb(34 211 238 / 0.2);
-  --glow-accent: 0 0 12px rgb(139 92 246 / 0.5);
-  --glow-accent-sm: 0 0 8px rgb(139 92 246 / 0.3);
-  --glow-accent-lg: 0 0 20px rgb(139 92 246 / 0.4), 0 0 40px rgb(139 92 246 / 0.2);
+  --glow-primary: 0 0 12px rgb(var(--color-primary) / 0.5);
+  --glow-primary-sm: 0 0 8px rgb(var(--color-primary) / 0.3);
+  --glow-primary-lg: 0 0 20px rgb(var(--color-primary) / 0.4), 0 0 40px rgb(var(--color-primary) / 0.2);
+  --glow-secondary: 0 0 12px rgb(var(--color-secondary) / 0.5);
+  --glow-secondary-sm: 0 0 8px rgb(var(--color-secondary) / 0.3);
+  --glow-secondary-lg: 0 0 20px rgb(var(--color-secondary) / 0.4), 0 0 40px rgb(var(--color-secondary) / 0.2);
 
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -58,20 +65,32 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary-400: rgb(var(--color-primary-400));
+  --color-primary-500: rgb(var(--color-primary-500));
+  --color-primary-600: rgb(var(--color-primary-600));
   --color-primary: rgb(var(--color-primary));
-  --color-primary-hover: rgb(var(--color-primary-hover));
-  --color-accent: rgb(var(--color-accent));
-  --color-accent-alt: rgb(var(--color-accent-alt));
+
+  --color-secondary-400: rgb(var(--color-secondary-400));
+  --color-secondary-500: rgb(var(--color-secondary-500));
+  --color-secondary-600: rgb(var(--color-secondary-600));
+  --color-secondary: rgb(var(--color-secondary));
+
   --color-surface: rgb(var(--surface));
   --color-surface-elevated: rgb(var(--surface-elevated));
   --color-border: rgb(var(--border));
   --color-muted: rgb(var(--muted));
   --color-muted-foreground: rgb(var(--muted-foreground));
+
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
+
   --shadow-glow: var(--glow-primary);
   --shadow-glow-sm: var(--glow-primary-sm);
   --shadow-glow-lg: var(--glow-primary-lg);
+  --shadow-glow-secondary: var(--glow-secondary);
+  --shadow-glow-secondary-sm: var(--glow-secondary-sm);
+  --shadow-glow-secondary-lg: var(--glow-secondary-lg);
 }
 
 @layer base {
@@ -112,8 +131,8 @@
 
     body::after {
       background:
-        radial-gradient(ellipse 80% 50% at 20% 0%, rgb(34 211 238 / 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 100%, rgb(139 92 246 / 0.06) 0%, transparent 50%);
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgb(var(--color-primary) / 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgb(var(--color-secondary) / 0.06) 0%, transparent 50%);
     }
   }
 
@@ -189,11 +208,11 @@
   .glow-primary-hover:hover {
     box-shadow: var(--glow-primary);
   }
-  .glow-accent {
-    box-shadow: var(--glow-accent);
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
   }
-  .glow-accent-hover:hover {
-    box-shadow: var(--glow-accent);
+  .glow-secondary-hover:hover {
+    box-shadow: var(--glow-secondary);
   }
 
   .text-gradient-primary {
@@ -269,7 +288,7 @@
   bottom: 0;
   left: 1rem;
   width: 1px;
-  background: linear-gradient(to bottom, rgba(34, 211, 238, 0.5), rgba(63, 63, 70, 0.5), transparent);
+  background: linear-gradient(to bottom, rgb(var(--color-primary) / 0.5), rgba(63, 63, 70, 0.5), transparent);
   display: none;
 }
 
