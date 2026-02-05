@@ -1,0 +1,48 @@
+@keyframes templateFadeIn {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes templateFadeOut {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.template-fade-in {
+  animation: templateFadeIn 0.6s linear forwards;
+  view-transition-name: page-content;
+}
+
+::view-transition-old(page-content) {
+  animation: templateFadeOut 0.4s linear forwards;
+}
+
+::view-transition-new(page-content) {
+  animation: templateFadeIn 0.6s linear forwards;
+}

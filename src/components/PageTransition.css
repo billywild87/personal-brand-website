@@ -1,0 +1,13 @@
+@keyframes pageFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.page-fade-in {
+  animation: pageFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  width: 100%;
+}

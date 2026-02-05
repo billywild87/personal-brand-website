@@ -1,0 +1,305 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: 34 211 238;
+  --color-primary-hover: 6 182 212;
+  --color-accent: 139 92 246;
+  --color-accent-alt: 96 165 250;
+
+  --color-neutral-50: 250 250 250;
+  --color-neutral-100: 244 244 245;
+  --color-neutral-200: 228 228 231;
+  --color-neutral-300: 212 212 216;
+  --color-neutral-400: 161 161 170;
+  --color-neutral-500: 113 113 122;
+  --color-neutral-600: 82 82 91;
+  --color-neutral-700: 63 63 70;
+  --color-neutral-800: 39 39 42;
+  --color-neutral-900: 24 24 27;
+
+  --background: #18181a;
+  --foreground: #ffffff;
+  --surface: 39 39 42;
+  --surface-elevated: 63 63 70;
+  --border: 63 63 70;
+  --border-muted: 63 63 70;
+  --muted: 161 161 170;
+  --muted-foreground: 212 212 216;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --glow-primary: 0 0 12px rgb(34 211 238 / 0.5);
+  --glow-primary-sm: 0 0 8px rgb(34 211 238 / 0.3);
+  --glow-primary-lg: 0 0 20px rgb(34 211 238 / 0.4), 0 0 40px rgb(34 211 238 / 0.2);
+  --glow-accent: 0 0 12px rgb(139 92 246 / 0.5);
+  --glow-accent-sm: 0 0 8px rgb(139 92 246 / 0.3);
+  --glow-accent-lg: 0 0 20px rgb(139 92 246 / 0.4), 0 0 40px rgb(139 92 246 / 0.2);
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 4rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: rgb(var(--color-primary));
+  --color-primary-hover: rgb(var(--color-primary-hover));
+  --color-accent: rgb(var(--color-accent));
+  --color-accent-alt: rgb(var(--color-accent-alt));
+  --color-surface: rgb(var(--surface));
+  --color-surface-elevated: rgb(var(--surface-elevated));
+  --color-border: rgb(var(--border));
+  --color-muted: rgb(var(--muted));
+  --color-muted-foreground: rgb(var(--muted-foreground));
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --shadow-glow: var(--glow-primary);
+  --shadow-glow-sm: var(--glow-primary-sm);
+  --shadow-glow-lg: var(--glow-primary-lg);
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.08) 1px, transparent 0);
+    background-size: 32px 32px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgb(34 211 238 / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgb(139 92 246 / 0.06) 0%, transparent 50%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-primary));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-zinc-700/60 bg-zinc-800/30 p-4 sm:p-6;
+  }
+  .card-gradient {
+    @apply rounded-lg border border-zinc-700 bg-linear-to-br from-zinc-800/40 to-zinc-900/40 p-4 shadow-lg sm:p-6;
+  }
+  .card-accent {
+    @apply rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4 sm:p-6;
+  }
+  .card-accent-violet {
+    @apply rounded-lg border border-violet-500/30 bg-violet-500/5 p-4 sm:p-6;
+  }
+  .card-interactive {
+    @apply rounded-lg border border-zinc-700/60 bg-zinc-800/30 p-4 transition-all hover:border-cyan-500/30 hover:bg-zinc-800/50 sm:p-6;
+  }
+
+  .badge {
+    @apply rounded-md border border-zinc-700/60 bg-zinc-800/50 px-2 py-0.5 font-mono text-xs text-zinc-400;
+  }
+  .badge-muted {
+    @apply rounded-md border border-zinc-700/40 bg-zinc-800/30 px-2 py-0.5 font-mono text-xs text-zinc-400;
+  }
+  .badge-primary {
+    @apply rounded-md border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 font-mono text-xs text-cyan-400;
+  }
+  .badge-accent {
+    @apply rounded-md border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 font-mono text-xs text-violet-400;
+  }
+
+  .section-title {
+    @apply font-mono text-xs font-semibold tracking-wider text-cyan-400 uppercase;
+  }
+  .section-title-muted {
+    @apply font-mono text-xs font-semibold tracking-wider text-zinc-400 uppercase;
+  }
+
+  .icon-box {
+    @apply flex items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-400;
+  }
+  .icon-box-sm {
+    @apply flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-400;
+  }
+  .icon-box-md {
+    @apply flex h-10 w-10 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-400;
+  }
+  .icon-box-lg {
+    @apply flex h-12 w-12 items-center justify-center rounded-lg border border-zinc-700 bg-zinc-800/50 text-zinc-400;
+  }
+
+  .hero-section {
+    @apply mb-10 space-y-4 sm:mb-16 sm:space-y-6 lg:mb-20;
+  }
+  .hero-title {
+    @apply font-mono text-3xl font-bold text-white sm:text-4xl lg:text-6xl;
+  }
+  .hero-subtitle {
+    @apply max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg;
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-primary-hover:hover {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  .glow-accent-hover:hover {
+    box-shadow: var(--glow-accent);
+  }
+
+  .text-gradient-primary {
+    @apply bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent;
+  }
+
+  .bordered-item {
+    @apply border-l-2 border-zinc-700 py-1 pl-4 transition-colors hover:border-cyan-500;
+  }
+  .bordered-item-accent {
+    @apply border-l-2 border-cyan-500/50 py-1 pl-4 transition-colors hover:border-cyan-400;
+  }
+  .bordered-item-highlight {
+    @apply border-l-2 border-cyan-500/50 pl-6;
+  }
+
+  .divider {
+    @apply h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-transparent;
+  }
+  .divider-center {
+    @apply h-px bg-linear-to-r from-transparent via-cyan-500/30 to-violet-500/30;
+  }
+
+  .dot {
+    @apply h-2 w-2 shrink-0 rounded-full bg-cyan-400;
+  }
+  .dot-sm {
+    @apply h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500/50;
+  }
+  .dot-xs {
+    @apply h-1 w-1 shrink-0 rounded-full bg-cyan-500/50;
+  }
+  .dot-violet {
+    @apply h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400;
+  }
+
+  .meta-item {
+    @apply flex items-center gap-2 text-sm text-zinc-400;
+  }
+  .meta-icon {
+    @apply text-zinc-500;
+  }
+
+  .pulse-dot {
+    @apply relative flex h-2 w-2;
+  }
+  .pulse-dot::before {
+    content: "";
+    @apply absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75;
+  }
+  .pulse-dot::after {
+    content: "";
+    @apply relative inline-flex h-2 w-2 rounded-full bg-cyan-500;
+  }
+
+  .value-item {
+    @apply flex items-center gap-3 rounded-lg border border-zinc-700/50 bg-zinc-800/30 px-4 py-3 transition-colors hover:border-cyan-500/30;
+  }
+
+  .learning-item {
+    @apply flex items-start gap-3 rounded-lg border border-violet-500/20 bg-violet-500/5 p-4 transition-colors hover:border-violet-400/40;
+  }
+
+  .check-icon-box {
+    @apply flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10;
+  }
+}
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(34, 211, 238, 0.5), rgba(63, 63, 70, 0.5), transparent);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .timeline-container::before {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-container::before {
+    left: 1.5rem;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(63 63 70 / 0.8);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(82 82 91 / 0.9);
+  background-clip: padding-box;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(63 63 70 / 0.8) transparent;
+}
